@@ -1,20 +1,21 @@
-const book = {
-	updateTitle(newTitle) {
-		console.log("this in showThis: ", this);
-	}
-};
 
-const update = book.updateTitle;
-
-update("Lord Of The Rings");
-
-
-"use strict";
-
-const books = {
-	updateAuthor(newAuthor) {
-		console.log(`this in showThis: ${newAuthor} `, this);
-	}
-};
-
-books.updateAuthor("Jacob");
+const animal = {
+	legs: 4,
+  };
+  
+  const dog = Object.create(animal);
+  dog.name = "Mango";
+  
+  console.log(dog); // { name: "Mango", [[Prototype]]: animal }
+  const parent = {
+	name: "Stacey",
+	surname: "Moore",
+	age: 54,
+	heritage: "Irish",
+  };
+  
+  const child = Object.create(parent);
+  child.name = "Jason";
+  child.age = 27;
+  
+  console.log(child.name , child.surname);
