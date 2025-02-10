@@ -1,21 +1,49 @@
+class Car {
+  #brand;
+  #model;
+  #price;
 
-const animal = {
-	legs: 4,
-  };
-  
-  const dog = Object.create(animal);
-  dog.name = "Mango";
-  
-  console.log(dog); // { name: "Mango", [[Prototype]]: animal }
-  const parent = {
-	name: "Stacey",
-	surname: "Moore",
-	age: 54,
-	heritage: "Irish",
-  };
-  
-  const child = Object.create(parent);
-  child.name = "Jason";
-  child.age = 27;
-  
-  console.log(child.name , child.surname);
+  constructor(params) {
+    this.#brand = params.brand;
+    this.#model = params.model;
+    this.#price = params.price;
+  }
+
+  get brand() {
+    return this.#brand;
+  }
+
+  set brand(newBrand) {
+    this.#brand = newBrand;
+  }
+
+  get model() {
+    return this.#model;
+  }
+
+  set model(newModel) {
+    this.#model = newModel;
+  }
+
+  get price() {
+    return this.#price;
+  }
+
+  set price(newPrice) {
+    this.#price = newPrice;
+  }
+}
+
+const car = new Car({
+  brand: "BMW",
+  model: "X5",
+  price: "40000"
+});
+
+console.log(car.price);
+car.price = "35000";
+console.log(car.price);
+
+console.log(car.brand);
+car.brand = "Mers";
+console.log(car.brand);
